@@ -1,0 +1,4 @@
+vards,uzvards,vecums
+Ziema,Zane,34
+Ance,Ziema,34
+Bobs,Janis,23

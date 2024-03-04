@@ -1,0 +1,4 @@
+Rīga
+Sigulda
+Valmiera
+Hello, World{'\nLatvija': 'Rīga', '\nSomija': 'Helsinki', '\nIgaunija': 'Tallina'}

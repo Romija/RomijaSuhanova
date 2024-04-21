@@ -4,6 +4,7 @@ def sveicieni():
 import datetime
 
 def datuma_ievade():
+    global date
     while True:
         datums = input("Lūdzu ievadiet datumu formātā YYYY-MM-DD: ")
         try:
@@ -42,7 +43,8 @@ def skolenu_vardi():
     vardi = []
     for i in range(skaits):
         vards = input(f'Lūdzu ievadiet {i+1}. skolēna vārdu: ')
-        vardi.append(vards)
+        atzime = ievadit_atzimi()################################################################
+        vardi.append((vards, atzime)) ###########################################################
     return vardi
 
 def ievadit_atzimi():
@@ -62,13 +64,17 @@ def izveidot_vai_papildinat_failu():
     skaits_sk()
     vardi = skolenu_vardi()
 
-    filename = f"{klase}_{tema}.txt"
+    filename = f"{tema}.txt"
 
     try:
-        with open(filename, 'a') as f:
-            for skolens in vardi:
-                f.write(skolens + '\n')
-        print(f"Failā '{filename}' veiksmīgi saglabāti skolēnu vārdi.")
+        with open(filename, 'a', encoding='utf-8') as f: #######################################enc
+            f.write(f"\nIesniegšanas datums: {date}\nKlase: {klase}\nTēma: {tema}\n")##############
+            for skolens in vardi:##################################################################
+                f.write(f'Vārds: {skolens[0]}, Atzīme: {skolens[1]}\n') ###########################
+                f.write('----------')
+            print(f"Iesniegšanas datums: {date}\nKlase: {klase}\nTēma: {tema}")####################
+            for vards, atzime in vardi:############################################################
+                print(f'Vārds: {vards}, Atzīme: {atzime}')#########################################
     except Exception as e:
         print(f"Kļūda, nevarēja saglabāt failā: {e}")
 

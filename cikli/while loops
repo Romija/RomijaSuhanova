@@ -1,0 +1,11 @@
+while True:
+    J = input("Lūdzu, ievadiet skaitli no 1 līdz 4 vai tekstu: ")
+    if J.isdigit():
+        J = int(J)
+        if 1 <= J <= 4:
+            print(J)
+            break
+        else:
+            print("Nepareiza ievade. Lūdzu, ievadiet skaitli no 1 līdz 4.")
+    else:
+        print("Nepareiza ievade. Lūdzu, ievadiet skaitli no 1 līdz 4.")

@@ -1,0 +1,3 @@
+Viens,Divi,33
+Divi,Trīs,88
+Viens,Divi,22

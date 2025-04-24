@@ -1,0 +1,23 @@
+while True:
+            adresats = input("Lūdzu ievadiet adresātu: ")
+            if adresats not in tirgotaji:
+                print("Nepareizs adresāts. Mēģini vēlreiz.")
+            else:
+                break
+
+        while True:
+            prece = input("Lūdzu ievadiet preci: ")
+            if prece not in [p.nosaukums for p in produkti]:
+                print("Nepareiza prece. Mēģini vēlreiz.")
+            else:
+                break
+
+        while True:
+            try:
+                pasutijuma_daudzums = int(input("Lūdzu ievadiet preces daudzumu: "))
+                if pasutijuma_daudzums <= 0:
+                    print("Daudzumam jābūt pozitīvam skaitlim.")
+                else:
+                    break
+            except ValueError:
+                print("Lūdzu ievadiet skaitli!")

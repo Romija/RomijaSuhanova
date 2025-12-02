@@ -109,3 +109,4 @@ while True:
 
     except ValueError:
         print("Ievadi skaitli!")
+

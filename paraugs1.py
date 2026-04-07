@@ -1,32 +1,38 @@
-#saglabāt datus sarakstā
-'''names=[]
-for i in range(3):
-    names.append(input('Whats your name?: '))
-#atgriež sakārtotus
-for name in sorted(names):
-    print(f'Hello, {name}')'''
+#definēt klasi Printeris ar vienu metodi drukat(), kas izdruka tekstu
+class Printeris:
+    def drukat(self, teksts):
+        print(teksts)
 
-#info no konsoles ieraksta failā
-'''name = input('Whats your name?: ')
-file=open('names.txt', 'a', encoding='utf8') #w izveido failu un ieraksta datus failā
-#a izveido failu, bet info pievieno klāt
-file.write(f'{name}\n')
-file.close() #ja izmanto file=open, tad aizver ciet failu'''
-#lieto context maneger-fails, nu ka nav jāaizver
-'''name = input('Whats your name?: ')
-with open('names.txt', 'a', encoding='utf8') as file:
-    file.write(f'{name}\n')'''
+#objektu izveide
+printeris = Printeris()
+printeris.drukat("Kā ieeet?")
 
-#nolasīt info no faila
-'''with open('names.txt',encoding='utf') as file: #r var nerakstīt jo default
-    for line in file: #var line vietā jebko rakstīt
-        print('Hello,',line.rstrip()) # rstrip nogriež liekās rindiņas, atsarpes
-'''
-#atgriezt sakārtotus datus no faila
-names=[]
-with open('names.txt',encoding='utf') as file:
-    for line in file:
-        names.append(line.rstrip())
-#atgriež sakārtotus
-for name in sorted(names):
-    print(f'Hello, {name}')
+
+
+#definē klasi suns ar vienu īpašību (piemēram, vārds). Klasei izveido 2 objektus
+class Suns:
+    def __init__(self, vards):
+        self.vards = vards
+
+suns1 = Suns("Maksis")
+print("1.suņa vārds: ", suns1.vards)
+suns2 = Suns("Reksis")
+print("2.suņa vārds: ", suns2.vards)
+
+
+
+#definēt klasi grāmata, jabut 3 laukiem (jebko, piem, autors, lpp, zanrs), metode info() - izdruka info par grāmatu. Izveidot 2 objektus
+class Gramata:
+    def __init__(self, autors, zanrs, lpp):
+        self.autors = autors
+        self.zanrs = zanrs
+        self.lpp = lpp
+    
+    def info(self):
+        print(f"Autors, žanrs, lpp skaits: {self.autors},{self.zanrs},{self.lpp}")
+
+gramata1 = Gramata("Nāve uz Nīlas", "Agata Kristi",345)
+gramata2 = Gramata("Būris", "Alberts Bels",240)
+
+gramata1.info()
+gramata2.info()
